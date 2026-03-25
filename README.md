@@ -1,6 +1,6 @@
-# SCARNet: Spatial-Channel Attention and Multi-Scale Refinement for 3D Human Pose Estimation
+# SCARNet: Spatial-Channel Attention and Multi-Scale Refinement Network for 3D Human Pose Estimation
 This is the official implementation of the approach described in the paper:
-> **SCARNet: Spatial-Channel Attention and Multi-Scale Refinement for 3D Human Pose Estimation**
+> **SCARNet: Spatial-Channel Attention and Multi-Scale Refinement Network for 3D Human Pose Estimation**
 > 
 ## Installation
 
