@@ -95,4 +95,4 @@ class AMRE(nn.Module):
         self.amre_full = AMRE_Full(dim=dim, num_heads=num_heads, factor=factor)
     
     def forward(self, x):
-        return self.msla_mona_full(x)
+        return self.amre_full(x)
