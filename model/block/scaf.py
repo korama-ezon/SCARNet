@@ -79,7 +79,7 @@ class Block(nn.Module):
         self.norm1 = norm_layer(length)
         self.gcn_1 = Gcn(dim, dim, adj)
         self.dw_conv = nn.Sequential(
-            nn.Conv1d(dim, dim, kernel_size=7, padding=3, groups=1),
+            nn.Conv1d(dim, dim, kernel_size=7, padding=3, groups=dim),
             nn.GroupNorm(16, dim),
             nn.GELU()
         )
