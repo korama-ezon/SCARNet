@@ -108,6 +108,8 @@ class Block(nn.Module):
 
         #MJEM
         x_mjem = self.dw_conv(x)
+        x_mjem = self.mlp_1(x_mjem)
+        
         #GSA
         x_gsa = self.spatial_global_attn(x)
 
