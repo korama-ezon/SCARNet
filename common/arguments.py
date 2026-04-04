@@ -25,7 +25,7 @@ def parse_args():
     parser.add_argument('--gpu', default='0', type=str)
     parser.add_argument('--train', default=1, type=int)
     parser.add_argument('--test', action='store_true')
-    parser.add_argument('--nepoch', type=int, default=50)
+    parser.add_argument('--nepoch', type=int, default=20)
     parser.add_argument('--batch_size', type=int, default=256)
     parser.add_argument('--lr', type=float, default=1e-3)
     parser.add_argument('--lr_refine', type=float, default=1e-5)
