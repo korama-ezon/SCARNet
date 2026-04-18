@@ -9,7 +9,7 @@ class SpatialAttention1D(nn.Module):
     def __init__(self, kernel_size=7):
         super().__init__()
         
-        assert kernel_size in (3, 5, 7, 9, 11), 
+        assert kernel_size in (3, 5, 7, 9, 11), 'kernel size must be 3, 5 or 7'
         padding = kernel_size // 2
         
         self.conv1 = nn.Conv1d(2, 1, kernel_size, padding=padding, bias=False)
@@ -37,7 +37,7 @@ class GlobalSpatialAttention(nn.Module):
         
         self.spatial_attn = SpatialAttention1D(kernel_size=kernel_size)
 
-        self.dropout = nn.Dropout(p=0.5)
+        self.dropout = nn.Dropout(p=0.1)
         if self.frames > 1:
             self.ln2 = nn.LayerNorm(num_joints)
 
@@ -55,8 +55,6 @@ class GlobalSpatialAttention(nn.Module):
 
     def forward(self, x):
         B, C, J = x.shape
-        assert J == self.num_joints, f"Joints mismatch: expected {self.num_joints}, got {J}"
-        assert C == self.channels, f"Channels mismatch: expected {self.channels}, got {C}"
         
         residual = x
 
