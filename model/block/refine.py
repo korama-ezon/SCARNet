@@ -19,7 +19,7 @@ class post_refine(nn.Module):
             nn.Dropout(0.1)
         )
         
-        self.amre = AMRE(in_dim=fc_unit, factor=2)
+        self.amre = AMRE(dim=fc_unit, factor=2)
         
         self.post_amre = nn.Sequential(
             nn.Linear(fc_unit, fc_out),
@@ -38,7 +38,7 @@ class post_refine(nn.Module):
         x_amre_out = self.amre(x_amre_in)
         x_amre_flat = x_amre_out.view(N, -1)
         
-        score = self.post_amre(x_amre_flat).view(N, T, V, 2)
+        score = self.post_mona(x_amre_flat).view(N, T, V, 2)
         
         score_cm = Variable(torch.ones_like(score, device=x.device), requires_grad=False) - score
         
