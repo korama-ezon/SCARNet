@@ -37,9 +37,6 @@ python main.py --frames 1 --batch_size 256
 python main.py --frames 1 --batch_size 256 --refine --lr 5e-4 --previous_dir [your best model saved path]
 ```
 >
-## Download pretrained model
-The pretrained model can be found in <a href='https://drive.google.com/drive/folders/1n_UF1ZxxDCK9smKe6KwpCwVmMEoaDNi5?usp=drive_link'>here</a>, please download it and put it in the &#39;./checkpoint&#39; directory. 
->
 ## Test the model
 To test a 1-frame SCARNet model on Human3.6M:
 ```bash
