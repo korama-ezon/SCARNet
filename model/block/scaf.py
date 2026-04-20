@@ -102,11 +102,6 @@ class Block(nn.Module):
         self.gcn_2 = Gcn(dim, dim, adj, keypoints, frames)
         
         self.mlp_2 = Mlp(in_features=dim, hidden_features=channels_dim, act_layer=act_layer, drop=drop)
-        self.a_g = nn.Parameter(torch.ones(length)) 
-        self.a_m = nn.Parameter(torch.ones(length)) 
-        self.a_s = nn.Parameter(torch.ones(length)) 
-
-        self.mha = nn.MultiheadAttention(embed_dim=512, num_heads=8, batch_first=True)
 
     def forward(self, x):
         res = x
